@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register_Activity"
+    android:background="@drawable/background">
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:textColorHint="#000000"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:textColorHint="#000000"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"
+
+        />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"
+        android:textColorHint="#000000"
+        android:inputType="phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/editTextDateOfBirth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Date of Birth"
+        android:textColorHint="#000000"
+        android:inputType="date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"/>
+
+    <!-- Add a PIN field -->
+    <EditText
+        android:id="@+id/PIN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="PIN"
+        android:inputType="numberPassword"
+        android:textColorHint="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDateOfBirth"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"/>
+
+    <!-- Add a Register button to submit the registration details -->
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PIN"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/black"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
