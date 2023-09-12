@@ -18,20 +18,17 @@ public class Display_data_test extends AppCompatActivity {
         TextView dataTextView = findViewById(R.id.dataTextView);
         Button clearDataButton = findViewById(R.id.clearDataButton);
 
-        // Retrieve the data passed from Register_Activity
         Intent intent = getIntent();
         if (intent != null) {
             String data = intent.getStringExtra("data");
             dataTextView.setText(data);
         }
 
-        // Set a click listener for the "Clear Database Data" button
+        // Click listener for the "Clear Database Data" button
         clearDataButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Call a method to clear database data
                 clearDatabaseData();
-                // Update the dataTextView to show that data has been cleared
                 dataTextView.setText("Database data has been cleared.");
             }
         });
@@ -39,13 +36,11 @@ public class Display_data_test extends AppCompatActivity {
 
     // Method to clear database data
     private void clearDatabaseData() {
-        SQLiteDatabase db = openOrCreateDatabase("YourDatabaseName.db", MODE_PRIVATE, null);
+        SQLiteDatabase db = openOrCreateDatabase("HostedData.db", MODE_PRIVATE, null);
 
         try {
-            // Execute SQL command to delete all records from the "users" table
             db.execSQL("DELETE FROM users");
         } finally {
-            // Close the database connection in a finally block
             if (db != null && db.isOpen()) {
                 db.close();
             }

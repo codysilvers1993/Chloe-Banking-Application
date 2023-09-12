@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        emailEditText = findViewById(R.id.editTextTextEmailAddress); // Assuming the ID is correct in your XML
-        passwordEditText = findViewById(R.id.editTextNumberPassword2); // Assuming the ID is correct in your XML
+        emailEditText = findViewById(R.id.editTextTextEmailAddress);
+        passwordEditText = findViewById(R.id.editTextNumberPassword2);
         loginButton = findViewById(R.id.button);
         registerButton = findViewById(R.id.button2);
 
@@ -56,9 +56,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // This method should check the login credentials against your database
+    // Method to check user creds against database
     private boolean checkLogin(String email, String password) {
-        SQLiteDatabase db = openOrCreateDatabase("YourDatabaseName.db", MODE_PRIVATE, null);
+        SQLiteDatabase db = openOrCreateDatabase("HostedData.db", MODE_PRIVATE, null);
 
         if (db == null) {
             // Handle the case where the database cannot be opened

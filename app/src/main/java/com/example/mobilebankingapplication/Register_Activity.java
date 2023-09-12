@@ -12,7 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Register_Activity extends AppCompatActivity {
-
+// Registration functionality for user to input info and database will store data in database
     EditText emailEditText, passwordEditText, phoneEditText, dobEditText, PINEditText;
 
     @Override
@@ -43,7 +43,7 @@ public class Register_Activity extends AppCompatActivity {
     }
 
     private void insertData(String email, String password, String phone, String dob, String PINNumber) {
-        SQLiteDatabase db = openOrCreateDatabase("YourDatabaseName.db", MODE_PRIVATE, null);
+        SQLiteDatabase db = openOrCreateDatabase("HostedData.db", MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, password TEXT, phone TEXT, dob TEXT, PINNumber INTEGER)");
 
         ContentValues values = new ContentValues();

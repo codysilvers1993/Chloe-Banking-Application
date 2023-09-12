@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Login_Activity extends AppCompatActivity {
-    // Button functionality for account screen
+    // Button functionality for logged in account screen
     Button checkingAccountButton, savingsAccountButton, withdrawalFundsButton, depositFundsButton, signOutButton;
 
     @Override
@@ -22,7 +22,7 @@ public class Login_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-            // finders and button sets
+        // finders and button sets
         checkingAccountButton = findViewById(R.id.checkingAccountBalance);
         savingsAccountButton = findViewById(R.id.savingsAccountBalance);
         withdrawalFundsButton = findViewById(R.id.withdrawButton);
@@ -30,7 +30,7 @@ public class Login_Activity extends AppCompatActivity {
         signOutButton = findViewById(R.id.signOutButton);
 
 
-        // onClick functions for handling user taps for account balance/withdrawals/deposits
+        // onClick methods for handling user taps for account balance/withdrawals/deposits/etc
         checkingAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +73,7 @@ public class Login_Activity extends AppCompatActivity {
 
     }
 
-    // method for pin input dialog box and corresponding variables
+    // Method for pin input dialog box and corresponding variables
     private void showPinInputDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         final EditText pinEditText = new EditText(this);
@@ -89,7 +89,7 @@ public class Login_Activity extends AppCompatActivity {
                     int enteredPin = Integer.parseInt(enteredPinText);
                     if (isValidPin(enteredPin)) {
                         Toast.makeText(Login_Activity.this, "PIN is valid. Checking balance...", Toast.LENGTH_SHORT).show();
-                        // if authenticated PIN is valid display checking out balance
+                        // if authenticated PIN is valid display checking balance
                         Intent intent = new Intent(Login_Activity.this, checkingAccountBalance.class);
                         startActivity(intent);
                     } else {
@@ -112,9 +112,9 @@ public class Login_Activity extends AppCompatActivity {
 
         builder.show();
     }
-        // Pin database authentication
+        // Pin database authentication method
         private boolean isValidPin(int enteredPin) {
-            SQLiteDatabase db = openOrCreateDatabase("YourDatabaseName.db", MODE_PRIVATE, null);
+            SQLiteDatabase db = openOrCreateDatabase("HostedData.db", MODE_PRIVATE, null);
 
             // Replace "users" with your actual table name if it's different
             Cursor cursor = db.rawQuery("SELECT PINNumber FROM users WHERE PINNumber = ?", new String[]{String.valueOf(enteredPin)});
